@@ -1,0 +1,105 @@
+@import '@fontsource/outfit/300.css';
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Instrument Serif', 'Times New Roman', serif;
+  --font-ui: 'Outfit', 'Segoe UI', sans-serif;
+
+  --color-void: #09090b;
+  --color-ink: #121214;
+  --color-mist: #d8d0c4;
+  --color-brass: #c4a574;
+  --color-brass-deep: #8d6b3e;
+  --color-sage: #8ba4a8;
+  --color-focus: #7d8fa3;
+  --color-veil: #6b7cb0;
+}
+
+canvas {
+  cursor: grab;
+}
+
+canvas:active {
+  cursor: grabbing;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #09090b;
+  color: #ece7de;
+  font-family: var(--font-ui);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+[role='button'] {
+  font-family: inherit;
+}
+
+button:focus-visible,
+[role='tab']:focus-visible,
+[role='radio']:focus-visible {
+  outline: 2px solid rgba(196, 165, 116, 0.85);
+  outline-offset: 2px;
+}
+
+.hud-glass {
+  background: rgba(12, 12, 14, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(22px) saturate(1.15);
+}
+
+.entity-label {
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f3eee6;
+  background: rgba(10, 10, 12, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 10px 5px;
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 99px;
+}
+
+.load-bar {
+  animation: load-slide 1.15s ease-in-out infinite;
+}
+
+@keyframes load-slide {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}

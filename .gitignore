@@ -1,0 +1,32 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+dist-ssr
+*.local
+
+# Editor
+.DS_Store
+.vscode
+.idea
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Test / QA artifacts
+playwright-report
+test-results
+qa-shots
+
+# Caches
+.cache
+.eslintcache
+.vite
